@@ -1,0 +1,12 @@
+
+div.phonebooks {
+    float: left;;
+    width: 20%;
+    background-color: lightblue;
+
+}
+
+span.user-name {
+    font-weight: bold;
+    font-size: 1em;
+}

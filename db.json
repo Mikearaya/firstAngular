@@ -1,0 +1,20 @@
+{
+  "phonebook": [{ 
+    "userId" : 1,
+    "type" : "mobile",
+    "number": "0912445566"
+  }],
+  "users": [
+    {
+      "id" : 1,
+      "userName": "MikeAraya12",
+      "firstName" : "Mikael",
+      "lastName": "Araya",
+      "phonebook": [{
+        "type": "mobile",
+        "number": "0912669988"
+      }]
+
+   }
+  ]
+}
