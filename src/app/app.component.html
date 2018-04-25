@@ -1,10 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
-
+<div>
 <h2>Select Phone Book </h2>
 
-    <div class="phonebooks" *ngFor="let account of accounts$" (click)="selectedAccount = account">
-      <span class="user-name">{{account.userName}} </span>
-    </div>
+  
+    <router-outlet></router-outlet>
 
-    <app-phone-book [account]="selectedAccount"></app-phone-book>
+</div>
+    
+  
 

@@ -1,20 +1,31 @@
 {
-  "phonebook": [{ 
+  "phonebook" : [{
     "userId" : 1,
+    "id" : 2,
     "type" : "mobile",
-    "number": "0912445566"
-  }],
+    "number" : "0912669988"
+    },
+    {
+      "userId" : 2,
+      "id" : 1,
+      "type" : "mobile",
+      "number" : "0912669988"
+      }
+
+  ],
   "users": [
     {
       "id" : 1,
       "userName": "MikeAraya12",
       "firstName" : "Mikael",
-      "lastName": "Araya",
-      "phonebook": [{
-        "type": "mobile",
-        "number": "0912669988"
-      }]
-
-   }
-  ]
+      "lastName": "Araya"
+    },
+      {
+        "id" : 2,
+        "userName": "shemsuAA",
+        "firstName" : "Shmsu",
+        "lastName": "Muktar"
+      }
+           
+     ]
 }

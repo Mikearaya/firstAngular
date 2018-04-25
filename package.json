@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "json-server" : "json-server --watch db.json --port 4000",
+    "json-server": "json-server --watch db.json --port 4500",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
@@ -45,5 +45,17 @@
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
     "typescript": "~2.5.3"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mikearaya/firstAngular.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/mikearaya/firstAngular/issues"
+  },
+  "homepage": "https://github.com/mikearaya/firstAngular#readme"
 }

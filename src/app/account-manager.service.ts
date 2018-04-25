@@ -1,23 +1,26 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { User } from './user';
-import { PhoneBook } from './phone-book';
 
 
 
 
-const API_LOCATION = 'http://localhost:3800';
+
+const API_LOCATION = 'http://localhost:4500';
 
 @Injectable()
-export class AccountManagerService {
+export class AccountManagerService implements OnInit, User {
+  
+  account: { id: number; userName: string; firstName: string; lastName: string; };
 
   constructor(private httpLink: HttpClient) { }
+    ngOnInit(){
+
+  }
 
   getAccounts() {
     return this.httpLink.get<User[]>(`${API_LOCATION}/users/`);
   }
-  getPhoneBook(accountId: number) {
-    return this.httpLink.get<PhoneBook[]>(`${API_LOCATION}/phonebook/`);
-  }
+ 
 }

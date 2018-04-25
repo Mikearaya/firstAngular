@@ -1,6 +1,11 @@
+import { PhoneBook } from './../phone-book';
 import { Component, OnInit, Input } from '@angular/core';
-import { AccountManagerService } from '../account-manager.service';
+import { Location } from '@angular/common';
+
 import { User } from '../user';
+import { ActivatedRoute } from '@angular/router';
+import { PhoneBookManagerService } from '../phone-book-manager.service';
+
 
 
 @Component({
@@ -8,16 +13,23 @@ import { User } from '../user';
   templateUrl: './phone-book.component.html',
   styleUrls: ['./phone-book.component.css']
 })
-export class PhoneBookComponent implements OnInit {
- @Input() account: User;
- phones$;
-  constructor(private accountManager: AccountManagerService) { }
+export class PhoneBookComponent implements OnInit, PhoneBook {
+
+  phone: { userId: number; number: string; type: string; };
+  
+  phones$ ;
+  constructor(private phoneManager: PhoneBookManagerService,
+              private activeRoute: ActivatedRoute,
+            private location: Location) { }
 
   ngOnInit() {
+    this.openPhonebook();
+    
   }
-
-  openPhonebook(id: number) {
-    this.accountManager.getPhoneBook(id).subscribe((response) => {
+  
+  openPhonebook() {
+   let id =+ this.activeRoute.snapshot.paramMap.get('id');
+    this.phoneManager.getPhoneBook(id).subscribe((response) => {
       this.phones$ = response;
     });
   }

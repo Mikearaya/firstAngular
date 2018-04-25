@@ -1,5 +1,7 @@
 export interface PhoneBook {
-    userId: number;
-    number: string;
-    type: string;
+   phone : {
+    userId: number,
+    number: string,
+    type: string
+   };
 }

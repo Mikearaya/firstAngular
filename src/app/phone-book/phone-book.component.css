@@ -2,3 +2,8 @@ div.account-form {
     margin: 1em;
     clear: both;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}

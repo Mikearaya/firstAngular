@@ -1,24 +1,20 @@
 
-<div *ngIf="account" class="account-form">
-<form name="phoneBookForm" (ngSubmit)="saveChange()">
-    <div class="form-group">
-        <label>User Name</label>
-        <input [(ngModel)]="account.userName" class="form-control" name="userName" />
-      </div>
 
-  <div class="row">  
-    <div class="form-group">
-    <label>First Name</label>
-    <input [(ngModel)]="account.firstName" class="form-control" name="firster" />
-  </div>
-  <div class="form-group">
-    <label>Last Name</label>
-    <input [(ngModel)]="account.lastName" class="form-control" name="number" />
-  </div>
-</div>
-
-  <button type="button" class="btn btn-success" (click)="updateAccount(account)">Update</button>
-  <button type="button" class="btn btn-info" (click)="openPhonebook(account.id)">Open Phonebook</button>
-
-</form>
-</div>
+<table>
+    <thead>
+    <tr>        
+        <th>Type</th>
+        <th>Number</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+</thead>
+<tbody >
+        <tr *ngFor="let phone of phones$" >        
+                <td>{{phone.type}}</td>
+                <td>{{phone.number}} </td>
+                <td><a (click)="editPhone(phone)">Edit </a> </td>
+                <td><a (click)="deltePhone(phone.id)">Delte </a> </td>
+            </tr>
+</tbody>
+</table>

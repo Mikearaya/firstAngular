@@ -5,16 +5,18 @@ import { AppComponent } from './app.component';
 import { AccountManagerService } from './account-manager.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PhoneBookComponent } from './phone-book/phone-book.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AccountComponent } from './account/account.component';
 import { RouterModule } from '@angular/router';
+import { AccountEditerComponent } from './account-editer/account-editer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PhoneBookComponent,
-    AccountComponent
+    AccountComponent,
+    AccountEditerComponent
   ],
   imports: [
     BrowserModule,

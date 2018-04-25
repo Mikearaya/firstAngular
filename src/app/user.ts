@@ -1,6 +1,9 @@
 export interface User {
-    id: number;
-    userName: string;
-    firstName: string;
-    lastName: string;
+
+    account: {
+    id: number,
+    userName: string,
+    firstName: string,
+    lastName: string
+    };
 }
