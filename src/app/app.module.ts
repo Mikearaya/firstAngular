@@ -1,3 +1,4 @@
+import { PhoneBookManagerService } from './phone-book-manager.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
@@ -24,7 +25,7 @@ import { AccountEditerComponent } from './account-editer/account-editer.componen
     FormsModule,
     AppRoutingModule
   ],
-  providers: [AccountManagerService],
+  providers: [PhoneBookManagerService, AccountManagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

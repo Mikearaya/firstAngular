@@ -13,11 +13,11 @@ import { PhoneBookManagerService } from '../phone-book-manager.service';
   templateUrl: './phone-book.component.html',
   styleUrls: ['./phone-book.component.css']
 })
-export class PhoneBookComponent implements OnInit, PhoneBook {
+export class PhoneBookComponent implements OnInit {
 
-  phone: { userId: number; number: string; type: string; };
-  
-  phones$ ;
+  userId: number;
+  selected = new PhoneBook(null, null, '', '');
+  phones$: PhoneBook[];
   constructor(private phoneManager: PhoneBookManagerService,
               private activeRoute: ActivatedRoute,
             private location: Location) { }
@@ -25,11 +25,23 @@ export class PhoneBookComponent implements OnInit, PhoneBook {
   ngOnInit() {
     this.openPhonebook();
     
+
   }
-  
+  editPhone(phone: PhoneBook) {
+    this.phoneManager.updatePhoneNumber(phone).subscribe( );
+  }
+  addPhone(phone: PhoneBook) {
+    phone.id = this.phones$.length + 1;
+    this.phoneManager.addPhoneNumber(this.userId, phone).subscribe(
+      (response: PhoneBook) => console.log(response)
+    );
+  }
+  deletePhone(phone: PhoneBook) {
+    this.phoneManager.deletePhoneNumber(phone.id).subscribe();
+  }
   openPhonebook() {
-   let id =+ this.activeRoute.snapshot.paramMap.get('id');
-    this.phoneManager.getPhoneBook(id).subscribe((response) => {
+   this.userId =+ this.activeRoute.snapshot.paramMap.get('id');
+    this.phoneManager.getPhoneBook(this.userId).subscribe((response) => {
       this.phones$ = response;
     });
   }

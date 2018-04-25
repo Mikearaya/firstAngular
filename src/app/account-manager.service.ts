@@ -10,10 +10,8 @@ import { User } from './user';
 const API_LOCATION = 'http://localhost:4500';
 
 @Injectable()
-export class AccountManagerService implements OnInit, User {
-  
-  account: { id: number; userName: string; firstName: string; lastName: string; };
-
+export class AccountManagerService implements OnInit {
+ 
   constructor(private httpLink: HttpClient) { }
     ngOnInit(){
 
