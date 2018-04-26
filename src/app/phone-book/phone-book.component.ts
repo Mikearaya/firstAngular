@@ -29,7 +29,7 @@ export class PhoneBookComponent implements OnInit {
 
   }
   deletePhone(phone: PhoneBook) {
-    this.phones$.filter(p  => p !== phone);
+   this.phones$ =  this.phones$.filter(p  => p !== phone);
     this.phoneManager.deletePhoneNumber(phone.id).subscribe();
 
   }

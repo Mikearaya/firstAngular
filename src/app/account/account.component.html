@@ -5,14 +5,13 @@
             *ngIf="!selectedAccount"
             type="button" 
             class="btn btn-info"
-            routerLink="account/new/"> Create Account </button>
+            routerLink="/account/new/"> Create Account </button>
   </nav>
 </div>
 <app-account-editer *ngIf="selectedAccount" [selected]="selectedAccount"></app-account-editer>
 <div class="container">
     <div class="row">
-        <div class="col-sm-4 col-xs-12 phonebooks"
-             
+        <div class="col-sm-4 col-xs-12 phonebooks"             
             *ngFor="let account of accounts$ ">
             <div class="row">
                 <div class="col-xs-12">

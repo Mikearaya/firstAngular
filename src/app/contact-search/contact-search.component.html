@@ -1,0 +1,15 @@
+<div class="container">
+
+<input #searchBox placeholder="search contact" id="search-box" 
+  (keyup)="search(searchBox.value)" >
+
+<ul>
+  <li *ngFor="let contact of contacts$ | async" >
+    <a routerLink="/phonebook/{{contact.id}}" >
+      {{contact.name}}
+
+    </a>
+  </li>
+</ul>
+
+</div>

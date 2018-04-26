@@ -10,16 +10,16 @@ import { PhoneEditerComponent } from './phone-editer/phone-editer.component';
 
 
 const route: Routes = [
-  {path: 'account', component : AccountComponent},
   {path: 'account/new', component : AccountEditerComponent},
-  {path: 'account/:id/new/phonebook', component : PhoneEditerComponent},
   {path: 'account/:id/phonebook', component : PhoneBookComponent},
-  {path: '', redirectTo: 'account', pathMatch : 'full'},
+  {path: 'phonebook/:id', component : PhoneEditerComponent},
+  {path: 'account/:id/new/phonebook', component : PhoneEditerComponent},
+  {path: '', component : AccountComponent},
   {path: '**', component : Page404Component}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(route, { enableTracing: true } )],
+  imports: [RouterModule.forRoot(route )],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
