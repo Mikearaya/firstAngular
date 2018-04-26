@@ -32,7 +32,10 @@ export class AccountEditerComponent implements OnInit {
   }
   updateAccount() {
     this.accountManager.update(this.user).subscribe(
-      (upadated: User) => this.location.back()
+      (upadated: User) => {
+        this.selected = null;
+        this.location.back();
+      }
     );
   }
 

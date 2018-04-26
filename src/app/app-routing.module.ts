@@ -1,3 +1,4 @@
+import { Page404Component } from './page404/page404.component';
 import { AccountEditerComponent } from './account-editer/account-editer.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -9,16 +10,16 @@ import { PhoneEditerComponent } from './phone-editer/phone-editer.component';
 
 
 const route: Routes = [
-
+  {path: 'account', component : AccountComponent},
   {path: 'account/new', component : AccountEditerComponent},
   {path: 'account/:id/new/phonebook', component : PhoneEditerComponent},
   {path: 'account/:id/phonebook', component : PhoneBookComponent},
-
-  {path: '', component: AccountComponent }
+  {path: '', redirectTo: 'account', pathMatch : 'full'},
+  {path: '**', component : Page404Component}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(route)],
+  imports: [RouterModule.forRoot(route, { enableTracing: true } )],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

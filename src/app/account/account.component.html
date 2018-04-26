@@ -1,20 +1,42 @@
-<div class="text-center">
+<div class="container text-center">
   <h2>Accounts</h2>
   <nav>
-      <button type="button" routerLink="account/new/"> Create Account </button>
+      <button 
+            *ngIf="!selectedAccount"
+            type="button" 
+            class="btn btn-info"
+            routerLink="account/new/"> Create Account </button>
   </nav>
 </div>
-<div>
-  <div 
-   class="phonebooks"  *ngFor="let account of accounts$ ">
-   
-     
-    <span class="user-name">{{account.userName}} </span>
-<a routerLink="account/{{account.id}}/phonebook">Open Phonebook</a>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <a (click)="selectedAccount = account">Edit Account</a>
-   
-  </div>
+<app-account-editer *ngIf="selectedAccount" [selected]="selectedAccount"></app-account-editer>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-xs-12 phonebooks"
+             
+            *ngFor="let account of accounts$ ">
+            <div class="row">
+                <div class="col-xs-12">
+                    <span class="user-name">{{account.userName}} </span>
+                </div>
+                <div class="col-xs-6">
+                    <a 
+                        routerLink="account/{{account.id}}/phonebook">Open Phonebook
+                    </a>  
+                </div>
+                <div class="col-xs-6">
+                    <a 
+                        (click)="selectedAccount = account">
+                        Edit Account
+                    </a>   
+                </div>
+                <div class="col-xs-12">
+                    <a class="btn btn-warn"
+                        (click)="deleteAccount(account)">
+                        Delte Account
+                    </a>   
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<app-account-editer *ngIf="selectedAccount" [selected]="selectedAccount"></app-account-editer>

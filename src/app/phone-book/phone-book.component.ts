@@ -34,7 +34,7 @@ export class PhoneBookComponent implements OnInit {
 
   }
   reset() {
-    this.currentPhone = new PhoneBook(null, null, '', '');
+    this.currentPhone = new PhoneBook(null, null, '', '', '');
   }
 
   openPhonebook() {

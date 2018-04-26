@@ -11,6 +11,7 @@ import { AccountComponent } from './account/account.component';
 import { RouterModule } from '@angular/router';
 import { AccountEditerComponent } from './account-editer/account-editer.component';
 import { PhoneEditerComponent } from './phone-editer/phone-editer.component';
+import { Page404Component } from './page404/page404.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { PhoneEditerComponent } from './phone-editer/phone-editer.component';
     PhoneBookComponent,
     AccountComponent,
     AccountEditerComponent,
-    PhoneEditerComponent
+    PhoneEditerComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,

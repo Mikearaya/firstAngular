@@ -20,6 +20,11 @@ export class PhoneEditerComponent implements OnInit {
 
   ngOnInit() {
     this.accountId = + this.activatedRoute.snapshot.paramMap.get('id');
+    /* to reuse the component for viewing another
+    this.currentPhone = this.route.paramMap
+    .switchMap((params: ParamMap) =>
+      this.phoneBookManager.getPhoneBook(params.get('id')));
+      */
   }
   addPhone() {
     this.phoneBookManager.addPhoneNumber(this.accountId, this.currentPhone).subscribe();

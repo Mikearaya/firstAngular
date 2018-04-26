@@ -1,13 +1,10 @@
 
 div.phonebooks {
-    float: left;
   
-    width: 20%;
     margin:5px;
     border-radius: 5%;
     height: 100px;
     background-color: lightblue;
-    padding: 5px;
     text-align: center;
 }
 

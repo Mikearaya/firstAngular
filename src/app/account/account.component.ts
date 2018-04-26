@@ -14,9 +14,15 @@ export class AccountComponent implements OnInit {
   ngOnInit() {
     this.dataService.getAccounts()
     .subscribe((result) =>  {
-      console.log(result);
       this.accounts$ = result;
       }  );
+  }
+
+  deleteAccount(account: User) {
+    this.dataService.delete(account.id).subscribe();
+    this.accounts$.filter(acc => {
+      return acc !== account;
+    });
   }
 
 }
