@@ -4,7 +4,7 @@
       "userId": 2,
       "id": 1,
       "type": "office",
-      "number": "0912669977"
+      "number": "9912889900"
     },
     {
       "id": 2,
@@ -15,7 +15,7 @@
     {
       "id": 3,
       "userId": 2,
-      "number": "83838383838",
+      "number": "833434343434",
       "type": "home"
     },
     {
@@ -23,6 +23,18 @@
       "userId": 1,
       "number": "54345345345",
       "type": "home"
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "number": "8585858585",
+      "type": "mobile"
+    },
+    {
+      "id": 6,
+      "userId": 3,
+      "number": "0988776654",
+      "type": "mobile"
     }
   ],
   "users": [
@@ -37,6 +49,12 @@
       "userName": "shemsuAA",
       "firstName": "Shmsu",
       "lastName": "Muktar"
+    },
+    {
+      "id": 3,
+      "userName": "testing",
+      "firstName": "Mikael",
+      "lastName": "Araya"
     }
   ]
 }

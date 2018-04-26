@@ -1,24 +1,33 @@
 
 <div class="container">
     <form name="phoneBookForm" (ngSubmit)="saveChange()">
-        <div class="form-group">
-            <label>User Name</label>
-            <input [(ngModel)]="selected.userName" class="form-control" name="userName" />
-          </div>    
-      <div class="row">  
+            
+      <div class="row"> 
+          <div class="col-xs-12">
+          <div class="form-group">
+              <label>User Name</label>
+              <input [(ngModel)]="user.userName" class="form-control" name="userName" />
+            </div>
+          </div>
+        <div class="col-sm-6 col-xs-12">
         <div class="form-group">
         <label>First Name</label>
-        <input [(ngModel)]="selected.firstName" class="form-control" name="firster" />
+        <input [(ngModel)]="user.firstName" class="form-control" name="firster" />
       </div>
+    </div> 
+    <div class="col-sm-6 col-xs-12">
       <div class="form-group">
         <label>Last Name</label>
-        <input [(ngModel)]="selected.lastName" class="form-control" name="number" />
+        <input [(ngModel)]="user.lastName" class="form-control" name="number" />
       </div>
     </div>
-    
-      <button type="button" class="btn btn-success" (click)="updateAccount(selected)">Update</button>
-      <button type="button" class="btn btn-info" (click)="openPhonebook(selected.id)">Open Phonebook</button>
-    
+
+    </div>
+    <div class="text-center">
+    <button type="button" class="btn btn-success btn-block" *ngIf="!selected" (click)="createAccount()">Add</button>
+      <button type="button" class="btn btn-success btn-lg" *ngIf="selected" (click)="updateAccount()">Update</button>
+      <button type="button" class="btn btn-info btn-lg" *ngIf="selected" routerLink="account/{{selected.id}}/phonebook">Open Phonebook</button>
+    </div>
     </form>
     </div>
     

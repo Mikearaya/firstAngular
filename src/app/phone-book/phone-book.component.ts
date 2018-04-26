@@ -16,7 +16,7 @@ import { PhoneBookManagerService } from '../phone-book-manager.service';
 export class PhoneBookComponent implements OnInit {
 
   userId: number;
-  currentPhone = new PhoneBook(null, null, '', '');
+  currentPhone: PhoneBook;
   phones$: PhoneBook[];
   constructor(private phoneManager: PhoneBookManagerService,
               private activeRoute: ActivatedRoute,
@@ -24,6 +24,7 @@ export class PhoneBookComponent implements OnInit {
 
   ngOnInit() {
     this.userId = + this.activeRoute.snapshot.paramMap.get('id');
+    this.reset();
     this.openPhonebook();
 
   }
@@ -32,10 +33,11 @@ export class PhoneBookComponent implements OnInit {
     this.phoneManager.deletePhoneNumber(phone.id).subscribe();
 
   }
+  reset() {
+    this.currentPhone = new PhoneBook(null, null, '', '');
+  }
 
   openPhonebook() {
-
-   console.log('this user Id' + this.userId);
     this.phoneManager.getPhoneBook(this.userId).subscribe((response) => {
       this.phones$ = response;
     });
@@ -47,7 +49,9 @@ export class PhoneBookComponent implements OnInit {
     );
   }
   editPhone(phone: PhoneBook) {
-    this.phoneManager.updatePhoneNumber(phone).subscribe( );
+    this.phoneManager.updatePhoneNumber(phone).subscribe( res =>
+      this.reset()
+     );
   }
 
 

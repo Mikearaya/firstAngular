@@ -21,4 +21,15 @@ export class AccountManagerService implements OnInit {
     return this.httpLink.get<User[]>(`${API_LOCATION}/users/`);
   }
 
+  create( account: User) {
+    return this.httpLink.post<User>(`${API_LOCATION}/users/`, account);
+  }
+
+  update(account: User) {
+    return this.httpLink.put<User>(`${API_LOCATION}/users/${account.id}`, account);
+  }
+
+  delete(accountId: number) {
+    return this.httpLink.delete<User>(`${API_LOCATION}/users/${accountId}`);
+  }
 }
