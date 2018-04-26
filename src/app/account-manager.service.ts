@@ -11,14 +11,14 @@ const API_LOCATION = 'http://localhost:4500';
 
 @Injectable()
 export class AccountManagerService implements OnInit {
- 
+
   constructor(private httpLink: HttpClient) { }
-    ngOnInit(){
+    ngOnInit() {
 
   }
 
   getAccounts() {
     return this.httpLink.get<User[]>(`${API_LOCATION}/users/`);
   }
- 
+
 }

@@ -1,11 +1,10 @@
 
-<div *ngIf="selected" class="container">
+<div class="container">
     <form name="phoneBookForm" (ngSubmit)="saveChange()">
         <div class="form-group">
             <label>User Name</label>
             <input [(ngModel)]="selected.userName" class="form-control" name="userName" />
-          </div>
-    
+          </div>    
       <div class="row">  
         <div class="form-group">
         <label>First Name</label>

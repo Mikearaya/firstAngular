@@ -5,12 +5,15 @@ import {AppComponent} from './app.component';
 import {AccountComponent} from './account/account.component';
 import {Routes, RouterModule} from '@angular/router';
 import { PhoneBookComponent } from './phone-book/phone-book.component';
+import { PhoneEditerComponent } from './phone-editer/phone-editer.component';
 
 
 const route: Routes = [
-  
-  {path: 'account/:id', component : AccountEditerComponent},
+
+  {path: 'account/new', component : AccountEditerComponent},
+  {path: 'account/:id/new/phonebook', component : PhoneEditerComponent},
   {path: 'account/:id/phonebook', component : PhoneBookComponent},
+
   {path: '', component: AccountComponent }
 ];
 

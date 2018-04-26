@@ -15,7 +15,7 @@ export class AccountEditerComponent implements OnInit {
   constructor(private accountManager: AccountManagerService) { }
 
   ngOnInit() {
-    console.log(this.selected);
+
   }
 
 }

@@ -5,6 +5,24 @@
       "id": 1,
       "type": "office",
       "number": "0912669977"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "number": "0948674635",
+      "type": "office"
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "number": "83838383838",
+      "type": "home"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "number": "54345345345",
+      "type": "home"
     }
   ],
   "users": [

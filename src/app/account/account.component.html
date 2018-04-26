@@ -2,11 +2,11 @@
 <h2>Accounts</h2>
 <div>
   <div 
-   class="phonebooks" routerLink="account/{{account.id}}/phonebook" *ngFor="let account of accounts$ ">
+   class="phonebooks"  *ngFor="let account of accounts$ ">
    
      
     <span class="user-name">{{account.userName}} </span>
-
+<a routerLink="account/{{account.id}}/phonebook">Open Phonebook</a>
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <a (click)="selectedAccount = account">Edit Account</a>
    

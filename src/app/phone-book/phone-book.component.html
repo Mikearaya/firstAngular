@@ -1,5 +1,37 @@
 <div class="container">
 
+
+<div class="container well well-lg">
+        <form >
+          <div class="row"> 
+              <div class="col-sm-6 col-xs-12">
+          <div class="form-group">
+                  <label>Type</label>
+                  <select name="phoneType" [(ngModel)]="currentPhone.type">
+                      <option value="mobile">Mobile</option>
+                      <option value="office">Office</option>
+                      <option value="home">Home</option>
+                  </select>
+                 
+                </div>
+              </div>
+          
+              <div class="col-sm-6 col-xs-12">
+              <div class="form-group">
+              <label>Number</label>
+              <input [(ngModel)]="currentPhone.number" class="form-control" name="firster" />
+            </div>
+          </div>
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-success btn-block" *ngIf="currentPhone.id" (click)="editphone(currentPhone);">Update</button>
+            
+            <button type="button" *ngIf="!currentPhone.id" (click)="addPhone()" class="btn btn-info btn-block" >add</button>
+          </div>
+    
+    </form>
+    
+    </div>
 <table>
     <thead>
     <tr>        
@@ -13,36 +45,13 @@
         <tr *ngFor="let phone of phones$" >        
                 <td>{{phone.type}}</td>
                 <td>{{phone.number}} </td>
-                <td><a (click)="selected = phone; update = true">Edit </a> </td>
-                <td><a (click)="deletePhone(phone)">Delte </a> </td>
+                <td><a (click)="currentPhone = phone;" >Edit </a> </td>
+                <td><a (click)="deletePhone(phone)">Delete </a> </td>
             </tr>
 </tbody>
 </table>
 
-    <form >
-            <div class="row"> 
-            <div class="form-group">
-                    <label>Type</label>
-                    <select name="phoneType" [(ngModel)]="selected.type">
-                        <option value="mobile">Mobile</option>
-                        <option value="office">Office</option>
-                        <option value="home">Home</option>
-                    </select>
-                   
-                  </div>
-            
-             
-                <div class="form-group">
-                <label>Number</label>
-                <input [(ngModel)]="selected.number" class="form-control" name="firster" />
-              </div>
-            </div>
-            
-              <button type="button" class="btn btn-success" *ngIf="update" (click)="editPhone(selected); update = false">Update</button>
-              <button type="button" *ngIf="!update" class="btn btn-info" (click)="addPhone(selected)">add</button>
-            
 
 
-    </form>
-
+ 
 </div>

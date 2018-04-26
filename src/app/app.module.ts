@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AccountComponent } from './account/account.component';
 import { RouterModule } from '@angular/router';
 import { AccountEditerComponent } from './account-editer/account-editer.component';
+import { PhoneEditerComponent } from './phone-editer/phone-editer.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AccountEditerComponent } from './account-editer/account-editer.componen
     AppComponent,
     PhoneBookComponent,
     AccountComponent,
-    AccountEditerComponent
+    AccountEditerComponent,
+    PhoneEditerComponent
   ],
   imports: [
     BrowserModule,
