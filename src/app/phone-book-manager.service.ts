@@ -32,7 +32,7 @@ export class PhoneBookManagerService implements OnInit {
   }
 
   searchPhone(id: number, name: any) {
-    return this.httpClient.get<PhoneBook[]>(`${API_LOCATION}/phonebook?name=${name}&userId=${id}`);
+    return this.httpClient.get<PhoneBook[]>(`${API_LOCATION}/phonebook?name_like=${name}&userId=${id}`);
   }
 
 }

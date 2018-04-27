@@ -1,59 +1,105 @@
 <div class="container">
-<app-contact-search [accountId]="userId"></app-contact-search>
-
-<div class="container well well-lg">
-    <form  >
-        <div class="row"> 
-            <div class="col-sm-2 col-xs-12">
-                <div class="form-group">                
-                    <select name="phoneType" required [(ngModel)]="currentPhone.type" placeholder="Phone Type">
-                        <option value="mobile">Mobile</option>
-                        <option value="office">Office</option>
-                        <option value="home">Home</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-sm-5 col-xs-12">
-                <div class="form-group">
-                    <label>Name</label>
-                    <input [(ngModel)]="currentPhone.name" required class="form-control" name="name" />
-                </div>
-            </div>
-            <div class="col-sm-5 col-xs-12">
-                <div class="form-group">
-                    <label>Number</label>
-                    <input [(ngModel)]="currentPhone.number" required class="form-control" name="phonenumber" />
-                </div>
-            </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <app-contact-search [accountId]="userId"></app-contact-search>
         </div>
-        <div class="text-center">
-            <button type="button" class="btn btn-success btn-block" *ngIf="currentPhone.id"  (click)="editPhone(currentPhone);">Update</button>
-            <button type="button" *ngIf="!currentPhone.id" (click)="addPhone()"  class="btn btn-info btn-block" >add</button>
-        </div>
-    </form>    
-</div>
-<table class="table table-strip">
-    <thead>
-    <tr>        
-        <th>Name</th>
-        <th>Type</th>
-        <th>Number</th>
-        <th>Edit</th>
-        <th>Delete</th>
-    </tr>
-</thead>
-<tbody >
-        <tr *ngFor="let phone of phones$" >        
+    </div>
+    
+    <div class="container well well-lg">
+        <form #contact="ngForm" (ngSubmit)="addPhone()" >
+            <div class="row"> 
+                <div class="col-sm-2 col-xs-12">
+                    <div class="form-group"> 
+                        <label>Type</label>               
+                        <select name="phoneType" 
+                                #type="ngModel"
+                                required 
+                                [(ngModel)]="currentPhone.type" 
+                                placeholder="Phone Type"
+                                class="form-control">
+                            <option value="mobile">Mobile</option>
+                            <option value="office">Office</option>
+                            <option value="home">Home</option>
+                        </select>
+                    </div>
+                    <div [hidden]="type.valid || type.pristine">
+                        <div class="alert alert-danger">
+                            Phone Type is required
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5 col-xs-12">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input 
+                                [(ngModel)]="currentPhone.name" 
+                                required 
+                                class="form-control" 
+                                name="name"
+                                #name="ngModel" />
+                    </div>
+                    <div [hidden]="name.valid || name.pristine"  class="alert alert-danger">
+                        <div> Contact Name is required </div>
+                    </div>
+                </div>
+                <div class="col-sm-5 col-xs-12">
+                    <div class="form-group">
+                        <label>Number</label>
+                        <input 
+                                [(ngModel)]="currentPhone.number" 
+                                required
+                                type="number" 
+                                class="form-control" 
+                                name="phonenumber"
+                                #number="ngModel" />
+                    </div>
+                    <div [hidden]="number.valid || number.pristine"  class="alert alert-danger">
+                        <div *ngIf="number?.errors?.number" > Contact number Should be digits </div>
+                        <div *ngIf="number?.errors?.required" > Contact number is required </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">            
+                <button 
+                        type="submit" 
+                        *ngIf="!currentPhone.id" 
+                        (click)="addPhone()"  
+                        class="btn btn-info btn-block"
+                        [disabled]="contact.form.invalid || contact.form.submitted" >Add New </button>
+            </div>
+        </form>    
+    </div>
+    <table class="table table-strip">
+        <thead>
+            <tr>        
+                <th>Name</th>
+                <th>Type</th>
+                <th>Number</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let phone of phones$" >        
                 <td>{{phone.name }}</td>
                 <td>{{phone.type}}</td>
                 <td>{{phone.number}} </td>
-                <td><a routerLink="/account/{{userId}}/view/{{phone.id}}" >Edit </a> </td>
-                <td><a (click)="deletePhone(phone)">Delete </a> </td>
+                <td>
+                    <button 
+                        class="btn btn-info" 
+                        routerLink="/account/{{userId}}/view/{{phone.id}}" >
+                        Edit 
+                    </button> 
+                </td>
+                <td>
+                    <button 
+                        class="btn btn-danger" 
+                        (click)="deletePhone(phone)">
+                        Delete 
+                    </button> 
+                </td>
             </tr>
-</tbody>
-</table>
-
-
-
+        </tbody>
+    </table>
  
 </div>

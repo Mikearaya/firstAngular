@@ -1,7 +1,12 @@
 <div class="container">
 
-<input #searchBox placeholder="search contact" id="search-box" 
-  (keyup)="search(searchBox.value)" >
+  <input 
+    #searchBox 
+    placeholder="search contact By Name" 
+    id="search-box" 
+    (keyup)="search(searchBox.value)"
+  
+  >
 
 <ul>
   <li *ngFor="let contact of contacts$ | async" >
