@@ -2,7 +2,7 @@
   "phonebook": [
     {
       "id": 4,
-      "name": "abiy",
+      "name": "abiyttt",
       "number": "454545454",
       "type": "mobile",
       "userId": 1
@@ -43,13 +43,6 @@
       "type": "office"
     },
     {
-      "id": 11,
-      "userId": 1,
-      "number": 232323,
-      "name": "asas",
-      "type": "office"
-    },
-    {
       "id": 12,
       "userId": 1,
       "number": 120039403,
@@ -58,10 +51,17 @@
     },
     {
       "id": 13,
-      "userId": 1,
-      "number": 120039403,
-      "name": "KKkals",
-      "type": "home"
+      "name": "Two in One",
+      "number": "0193838596",
+      "type": "mobile",
+      "userId": 1
+    },
+    {
+      "id": 14,
+      "name": "two in one test",
+      "number": "09292929284",
+      "type": "mobile",
+      "userId": 1
     }
   ],
   "users": [

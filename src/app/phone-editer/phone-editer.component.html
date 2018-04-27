@@ -1,6 +1,6 @@
 
 <div class="container">
-    <form  [formGroup]="contactForm" (ngSubmit)="editPhone()" >
+    <form  [formGroup]="contactForm" (ngSubmit)="saveChanges()" >
       <div class="row"> 
           <div class="col-sm-2 col-xs-12">
       <div class="form-group">
@@ -33,12 +33,11 @@
      
     
       <div class="text-center">
-        <button type="submit" class="btn btn-success btn-block" [disabled]="contactForm.invalid"  *ngIf="currentPhone?.id" >Update</button>
+        <button type="submit" class="btn btn-success btn-block" [disabled]="contactForm.invalid"  *ngIf="isUpdate" >Update</button>
+        <button type="submit" class="btn btn-success btn-block" [disabled]="contactForm.invalid"  *ngIf="!isUpdate" >Add</button>
         
         
       </div>
 
 </form>
 </div>
-<p>Form value: {{ contactForm.value | json }}</p>
-<p>Form status: {{ contactForm.status | json }}</p>
