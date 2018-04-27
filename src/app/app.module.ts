@@ -1,7 +1,7 @@
 import { PhoneBookManagerService } from './phone-book-manager.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AccountManagerService } from './account-manager.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -31,6 +31,7 @@ import { LogPageComponent } from './log-page/log-page.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [PhoneBookManagerService, AccountManagerService],
