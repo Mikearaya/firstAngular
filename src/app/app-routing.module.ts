@@ -12,8 +12,8 @@ import { PhoneEditerComponent } from './phone-editer/phone-editer.component';
 const route: Routes = [
   {path: 'account/new', component : AccountEditerComponent},
   {path: 'account/:id/phonebook', component : PhoneBookComponent},
-  {path: 'phonebook/:id', component : PhoneEditerComponent},
-  {path: 'account/:id/new/phonebook', component : PhoneEditerComponent},
+  {path: 'account/:id/add', component : PhoneEditerComponent},
+  {path: 'account/:id/view/:contactId', component : PhoneEditerComponent},
   {path: '', component : AccountComponent},
   {path: '**', component : Page404Component}
 ];

@@ -13,6 +13,7 @@ import { AccountEditerComponent } from './account-editer/account-editer.componen
 import { PhoneEditerComponent } from './phone-editer/phone-editer.component';
 import { Page404Component } from './page404/page404.component';
 import { ContactSearchComponent } from './contact-search/contact-search.component';
+import { LogPageComponent } from './log-page/log-page.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ContactSearchComponent } from './contact-search/contact-search.componen
     AccountEditerComponent,
     PhoneEditerComponent,
     Page404Component,
-    ContactSearchComponent
+    ContactSearchComponent,
+    LogPageComponent
   ],
   imports: [
     BrowserModule,

@@ -44,10 +44,10 @@
 </thead>
 <tbody >
         <tr *ngFor="let phone of phones$" >        
-                <td>{{phone.name | uppercase }}</td>
+                <td>{{phone.name }}</td>
                 <td>{{phone.type}}</td>
                 <td>{{phone.number}} </td>
-                <td><a (click)="currentPhone = phone;" >Edit </a> </td>
+                <td><a routerLink="/account/{{userId}}/view/{{phone.id}}" >Edit </a> </td>
                 <td><a (click)="deletePhone(phone)">Delete </a> </td>
             </tr>
 </tbody>

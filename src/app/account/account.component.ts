@@ -20,7 +20,7 @@ export class AccountComponent implements OnInit {
 
   deleteAccount(account: User) {
     this.dataService.delete(account.id).subscribe();
-    this.accounts$.filter(acc => {
+   this.accounts$ = this.accounts$.filter(acc => {
       return acc !== account;
     });
   }

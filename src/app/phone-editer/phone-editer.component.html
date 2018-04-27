@@ -1,32 +1,37 @@
 
-<div class="container well well-lg">
-    <form >
+
+    <form #contactForm="ngForm" (noSubmit)="save()">
       <div class="row"> 
           <div class="col-sm-6 col-xs-12">
       <div class="form-group">
               <label>Type</label>
-              <select name="phoneType" [(ngModel)]="currentPhone.type">
+              <select name="type" #type="ngModel" class="form-control" required [(ngModel)]="currentPhone.type">
                   <option value="mobile">Mobile</option>
                   <option value="office">Office</option>
                   <option value="home">Home</option>
               </select>
              
             </div>
+            <div [hidden]="type.valid || type.pristine">
+                <div class="alert alert-warn">Phone type is Required</div>
+            </div>
           </div>
       
           <div class="col-sm-6 col-xs-12">
           <div class="form-group">
           <label>Number</label>
-          <input [(ngModel)]="currentPhone.number" class="form-control" name="firster" />
+          <input [(ngModel)]="currentPhone.number" #number="ngModel" class="form-control" required name="number" />       
         </div>
+        <div [hidden]="number.valid" class="alert alert-warn" >
+          Phone Number is Required
+      </div>
       </div>
       </div>
       <div class="text-center">
-        <button type="button" class="btn btn-success btn-block" *ngIf="currentPhone.id" (click)="editphone(currentPhone);">Update</button>
+        <button type="button" class="btn btn-success btn-block" [disabled]="!contactForm.form.valid" *ngIf="currentPhone.id" (click)="editPhone(currentPhone);">Update</button>
         
-        <button type="button" *ngIf="!currentPhone.id" (click)="addPhone()" class="btn btn-info btn-block" >add</button>
+        <button type="button" *ngIf="!currentPhone.id" [disabled]="!contactForm.form.valid" (click)="addPhone()" class="btn btn-info btn-block" >add</button>
       </div>
 
 </form>
 
-</div>

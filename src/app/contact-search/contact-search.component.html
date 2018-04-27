@@ -5,7 +5,7 @@
 
 <ul>
   <li *ngFor="let contact of contacts$ | async" >
-    <a routerLink="/phonebook/{{contact.id}}" >
+    <a routerLink="/account/{{accountId}}/view/{{contact.id}}" >
       {{contact.name}}
 
     </a>

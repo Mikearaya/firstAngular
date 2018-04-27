@@ -13,7 +13,7 @@ export class PhoneBookManagerService implements OnInit {
   ngOnInit() {
 
   }
-  getPhone(id: number) {
+  getPhone(id: number): Observable<PhoneBook> {
     return this.httpClient.get<PhoneBook>(`${API_LOCATION}/phonebook?id=${id}`);
   }
   getPhoneBook(accountId: number) {
